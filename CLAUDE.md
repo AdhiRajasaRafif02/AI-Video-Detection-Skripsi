@@ -19,7 +19,7 @@ File ini dibaca otomatis oleh Claude Code setiap sesi. Isinya ringkasan status t
 | Kritik dosen: "hanya eksperimen, bukan membuat sesuatu" | Dijawab dengan usulan projector konsisten-kompresi (belum disetujui) |
 | Usulan metode | **Projector** (lapisan linear terlatih) di antara DINOv2 dan perhitungan geometri, dilatih dengan BCE + loss konsistensi berpasangan (video asli vs versi H.264). Model: B0, B1, P2, P3 (utama), P4 (varian kontrastif). **Usulan, belum disetujui dosen** |
 | Bimbingan 21 Nov 2026 | Dosen menanyakan: kenapa namanya projector, berapa node, efek sebelum/sesudah, works tanpa contrastive loss?, apakah contrastive learning?, referensi matematisnya. Jawaban lengkap di `docs/02_riset_projector_2026-11-21.md` |
-| Tugas dari dosen yang belum dikerjakan | **Studi literatur metode-metode berbasis vektor (dengan referensi jelas) untuk mulai menulis Bab 1** |
+| Tugas dosen: studi literatur metode berbasis vektor untuk Bab 1 | **Draf pertama selesai (21 Nov 2026)** di `docs/05_studi_literatur_bab1_2026-11-21.md`. Keberadaan referensi terverifikasi, tetapi isi dan lokasi (halaman/persamaan) paper selain ReStraV belum dicek di PDF (ditandai `[cek PDF]`). Interpretasi "berbasis vektor" belum dikonfirmasi dosen |
 | Dataset | Kandidat ComGenVid. Belum diunduh atau diverifikasi |
 | Eksperimen nyata | **Belum ada.** Yang ada hanya simulasi sintetis (`eksperimen/`), yang bukan hasil skripsi |
 | Judul, CRF final, persetujuan metode | Belum final |
@@ -33,6 +33,7 @@ File ini dibaca otomatis oleh Claude Code setiap sesi. Isinya ringkasan status t
 | `docs/02_riset_projector_2026-11-21.md` | Jawaban 6 pertanyaan dosen soal projector, lengkap dengan lokasi di referensi (bagian/persamaan/halaman), hasil simulasi, dan revisi desain |
 | `docs/03_penjelasan_konsep.md` | Penjelasan sederhana konsep-konsep yang pernah ditanyakan mahasiswa (vektor, geometri, projector, loss, backprop, training, AUROC) |
 | `docs/04_log_bimbingan.md` | Log kronologis bimbingan dan keputusan |
+| `docs/05_studi_literatur_bab1_2026-11-21.md` | Draf studi literatur metode berbasis vektor (UnivFD, Cozzolino, ReStraV, D3, SPLIT, TRACE), celah kompresi, daftar `[cek PDF]` |
 | `referensi/daftar_referensi.md` | Daftar paper dengan tautan dan catatan relevansi |
 | `eksperimen/simulasi_projector/` | Simulasi sintetis B0–P4 (PyTorch). Ilustrasi mekanisme saja |
 | `eksperimen/simulasi_noise_curvature/` | Simulasi: noise per-frame menarik curvature ke ~120° |

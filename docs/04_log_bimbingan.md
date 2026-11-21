@@ -4,6 +4,12 @@ Format setiap entri: tanggal, sumber, apa yang terjadi, status. Entri terbaru di
 
 ---
 
+## 21 November 2026 — Sesi Claude Code: draf studi literatur Bab 1
+
+Dibuat `docs/05_studi_literatur_bab1_2026-11-21.md` untuk tugas dosen. Referensi baru terverifikasi eksistensinya (DINOv2, Cozzolino, D3, dsb.). Isi paper selain ReStraV baru dari ringkasan alphaXiv, **belum dibaca di PDF**. Interpretasi "berbasis vektor" belum dikonfirmasi dosen. Belum di-commit.
+
+---
+
 ## 21 November 2026 — Bimbingan (hasil dilaporkan mahasiswa)
 
 **Masukan dosen tentang projector:**
