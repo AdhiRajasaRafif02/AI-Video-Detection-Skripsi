@@ -1,0 +1,43 @@
+# Log Bimbingan dan Keputusan
+
+Format setiap entri: tanggal, sumber, apa yang terjadi, status. Entri terbaru di atas. "Arahan dosen" = yang diceritakan mahasiswa, bukan notulen langsung.
+
+---
+
+## 21 November 2026 — Bimbingan (hasil dilaporkan mahasiswa)
+
+**Masukan dosen tentang projector:**
+1. Kenapa dinamakan projector padahal neuron biasa?
+2. Bentuknya berapa node?
+3. Bagaimana efek sebelum dan sesudahnya?
+4. Apakah works kalau tanpa contrastive loss?
+5. Apakah ini contrastive learning?
+6. Referensi apa yang dipakai untuk matematisnya?
+
+**Tugas dari dosen:** membuat studi literatur metode-metode berbasis vektor dengan referensi jelas, untuk mulai menulis Bab 1. **Status: belum dikerjakan** (ditunda, mahasiswa memprioritaskan memahami projector).
+
+**Tindak lanjut:** riset lengkap di `docs/02_riset_projector_2026-11-21.md`. Revisi desain yang diusulkan: projector tanpa bias, 384→384 dengan inisialisasi identitas, konsistensi pada fitur terstandardisasi, tambah model P4 (contrastive) sebagai ablasi. **Status: usulan, belum disetujui dosen.**
+
+**Permintaan mahasiswa:** setiap argumen harus punya lokasi di referensi dan tanpa celah logika.
+
+---
+
+## 13 November 2026 — Persiapan bimbingan (sesi Claude)
+
+- Mahasiswa melaporkan kritik dosen sebelumnya: menganalisis ReStraV + DINOv2 pada video terkompresi "hanya eksperimen, bukan membuat sesuatu". Dosen juga bertanya "hipotesisnya apa".
+- Yang pasti menurut mahasiswa: (1) eksperimen ReStraV + DINOv2 pada video terkompresi, (2) peningkatan metode lalu eksperimen ulang.
+- Disusun: projector konsisten-kompresi sebelum geometri, hipotesis H1–H3, model B0/B1/P1/P2/P3. Lihat `docs/01_ringkasan_bimbingan_2026-11-13.md`.
+
+---
+
+## 29 Oktober 2026 — "Studi Literatur 5" (ChatGPT)
+
+- Fokus dipersempit: ReStraV vs MISLnet → ReStraV saja.
+- Kritik dosen: ReStraV memang sudah memakai DINOv2, jadi pasangan itu bukan kontribusi baru. Pilihan yang dibahas: solusi degradasi kompresi atau perbandingan encoder.
+- Usulan saat itu: paired geometry consistency (adapter setelah 21 fitur). Direvisi 13 Nov.
+
+---
+
+## Sebelumnya (Juli – Oktober 2026)
+
+Lihat tabel kronologi di `docs/00_KONTEKS_DAN_PROGRES.md` Bagian 4. Ringkasnya: eksplorasi topik (Juli) → fokus video AI terkompresi (Agustus) → ReStraV sebagai landasan (3 Sep) → arahan dosen: metode ringan, 2–3 paper 10 tahun terakhir termasuk review (24 Sep) → arah analisis + perbaikan, real dan AI dikompresi setara (1 Okt) → ReStraV vs MISLnet (8 Okt).

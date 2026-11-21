@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+
+# Bobot model, embedding, dataset (besar / tidak perlu di-commit)
+*.pt
+*.pth
+*.npy
+*.npz
+*.h5
+data/
+datasets/
+videos/
+embeddings/
+*.mp4
+*.mkv
+*.avi
+
+# Paper PDF (hak cipta) – simpan tautannya di referensi/daftar_referensi.md
+*.pdf
+
+# OS
+.DS_Store
+Thumbs.db
