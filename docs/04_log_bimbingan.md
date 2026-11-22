@@ -4,9 +4,21 @@ Format setiap entri: tanggal, sumber, apa yang terjadi, status. Entri terbaru di
 
 ---
 
+## 22 November 2026 — Sesi Claude Code: setup ReStraV dan dataset
+
+- **Keputusan mahasiswa:** mulai eksperimen baseline (real vs AI, tanpa projector, tanpa kompresi tambahan) sambil menunggu persetujuan projector.
+- Dataset ComGenVid dicek: 5.100 video (MSVD/Sora/VEO3 masing-masing 1.700), 28,18 GB video; `embeddings.parquet` berisi DINOv3 (tidak dipakai). Diunduh ke `D:\Skripsi\data\comgenvid`.
+- **Risiko kebocoran:** MSVD bitrate jauh lebih tinggi (±9 vs ±1,4 Mbps Sora, perkiraan dari ukuran/durasi), FPS MSVD bervariasi sedangkan Sora 30 dan VEO3 24, resolusi VEO3 seragam 1280×720, 29 video Sora ber-watermark. Hasil pada video asli harus dibaca dengan catatan ini.
+- Kode ReStraV resmi (commit `c51ee52`) disalin dan disesuaikan (`eksperimen/restrav_reproduksi/PERUBAHAN.md`).
+- **Temuan:** kode resmi memakai CLS+patch = 257×384 = 98.688-D pada 224×224, sedangkan teks paper (Bag. 4) menulis 75.648-D dan bertentangan sendiri (224×224 dengan ViT-S/14 menghasilkan 256 patch, bukan 196). Reproduksi mengikuti kode. `train.py` resmi menormalisasi sebelum split.
+- **Hasil nyata pertama (Run 1):** ekstraksi 5.100/5.100 video berhasil (1 jam 42 menit). Reproduksi `train.py` apa adanya: AUROC 0,834, accuracy 0,758 (test 1.700 video, satu seed). Protokol belum bersih, jadi belum menjadi B0 final. Rincian di `eksperimen/restrav_reproduksi/HASIL.md`.
+- **B0 protokol bersih (Run 2):** split tetap berkelompok per YouTube ID (MSVD: 1.306 video sumber untuk 1.700 klip), normalisasi dari train, bobot kelas, τ dari val, 5 seed. AUROC 0,834 ± 0,004. Pada split acak tanpa kelompok, AUROC 0,842 ± 0,002 (26,5% klip MSVD test punya saudara di train). **Usulan asisten, belum dikonfirmasi dosen:** protokol ini dipakai untuk semua CRF, dengan AUROC sebagai metrik utama.
+
+---
+
 ## 21 November 2026 — Sesi Claude Code: draf studi literatur Bab 1
 
-Dibuat `docs/05_studi_literatur_bab1_2026-11-21.md` untuk tugas dosen. Referensi baru terverifikasi eksistensinya (DINOv2, Cozzolino, D3, dsb.). Isi paper selain ReStraV baru dari ringkasan alphaXiv, **belum dibaca di PDF**. Interpretasi "berbasis vektor" belum dikonfirmasi dosen. Belum di-commit.
+Dibuat `docs/05_studi_literatur_bab1_2026-11-21.md` untuk tugas dosen. Referensi baru terverifikasi eksistensinya (DINOv2, Cozzolino, D3, dsb.). Isi paper selain ReStraV baru dari ringkasan alphaXiv, **belum dibaca di PDF**. Interpretasi "berbasis vektor" belum dikonfirmasi dosen.
 
 ---
 

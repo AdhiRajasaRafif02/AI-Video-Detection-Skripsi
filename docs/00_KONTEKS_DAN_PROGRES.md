@@ -414,13 +414,15 @@ Wang dkk. (2026). ReStraV sebagai baseline pada 12 gangguan termasuk H.264 QP 23
 - Mempertimbangkan MISLnet, lalu meminta argumen untuk fokus pada ReStraV.
 - Mengidentifikasi kritik dosen tentang kontribusi, “hanya eksperimen”, dan pertanyaan hipotesis.
 - (13 Nov) Paper ReStraV dibaca penuh; mekanisme degradasi diusulkan dan diilustrasikan dengan simulasi mainan; usulan projector konsisten-kompresi, hipotesis H1–H3, dan model B0–P3 disusun dengan dukungan literatur.
+- **(Revisi 22 Nov)** ComGenVid diunduh (5.100 video). Kode ReStraV resmi berjalan di laptop mahasiswa (versi lokal, lihat `eksperimen/restrav_reproduksi/PERUBAHAN.md`). Fitur 5.100 video asli (tanpa re-encode) sudah diekstrak. Reproduksi `train.py` apa adanya: AUROC 0,834, accuracy 0,758 pada 1.700 video test, satu seed. Protokolnya belum bersih (normalisasi sebelum split, separuh fake dibuang), jadi ini **belum** angka B0 final. Rincian di `eksperimen/restrav_reproduksi/HASIL.md`.
+- **(Revisi 22 Nov)** B0 dengan protokol bersih (split tetap berkelompok per YouTube ID, normalisasi dari train, 5 seed): AUROC 0,834 ± 0,004 pada video asli. Protokolnya usulan asisten dan belum dikonfirmasi dosen. Jalan pintas codec belum dikontrol. Ini melengkapi Bagian 9.2 (split dan kontrol kebocoran).
 
 ### Belum ada bukti yang dapat diverifikasi dalam sumber yang tersedia
 
-- Dataset final telah dipilih, diunduh, dibersihkan, dan displit.
-- Reproduksi kode ReStraV berhasil pada perangkat mahasiswa.
-- Video telah dire-encode, fitur telah diekstrak, atau model telah dilatih.
-- Nilai AUROC, F1, accuracy, grafik, atau angka penurunan performa milik penelitian mahasiswa. Angka simulasi di Bagian 8A.1 adalah ilustrasi sintetis, bukan hasil skripsi.
+- ~~Dataset final telah dipilih, diunduh, dibersihkan, dan displit.~~ (22 Nov: diunduh, belum diputuskan final, split tetap belum dibuat)
+- ~~Reproduksi kode ReStraV berhasil pada perangkat mahasiswa.~~ (22 Nov: berhasil, lihat di atas)
+- Video telah dire-encode atau model telah dilatih pada kondisi kompresi. (22 Nov: fitur video asli sudah diekstrak, re-encode belum)
+- Nilai AUROC, F1, accuracy, grafik, atau angka penurunan performa akibat kompresi. (22 Nov: baru ada angka reproduksi pada video asli.) Angka simulasi di Bagian 8A.1 adalah ilustrasi sintetis, bukan hasil skripsi.
 - Projector/consistency loss telah dibuat atau menunjukkan perbaikan.
 - Dosen telah menyetujui judul, metode, hipotesis, CRF final, dataset, ukuran sampel, atau jadwal.
 - Ketersediaan GPU, kapasitas storage, deadline, format kampus, dan target kelulusan.

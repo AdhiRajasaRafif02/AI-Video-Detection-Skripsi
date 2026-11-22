@@ -1,0 +1,12 @@
+# Lingkungan lokal (Python 3.11, Windows, GTX 1650). torch dari --index-url https://download.pytorch.org/whl/cu121
+av==18.1.1
+h5py==3.16.0
+huggingface_hub==0.36.2
+matplotlib==3.11.2
+numpy==2.4.6
+pandas==3.1.1
+scikit-learn==1.9.1
+scipy==1.17.1
+torch==2.5.1+cu121
+torchvision==0.20.1+cu121
+tqdm==4.70.1
